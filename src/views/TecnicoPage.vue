@@ -44,12 +44,17 @@
           <ion-col size="12" size-md="3" push-md="9">
             <div class="box">
               CPU
-              <RTSpeedGauge :interval = "500"/>
+              <RTSpeedGauge 
+              :interval = "500"/>
             </div>
           </ion-col>
             <ion-col size="12" size-md="9" pull-md="3">
               <div class="box">
-                <RTLineChart :interval = "1000"/>
+                Usuarios en tiempo real
+                <RTLineChart 
+                  :interval = "1000"
+                  :offset = "300"
+                />
               </div>
             </ion-col>
         </ion-row>
@@ -61,8 +66,9 @@
             <div class="box">
               Uso de RAM (%)
               <LineChart
-                :labels="lineLabels1"
-                :values="lineValues1"
+                :labels = "lineLabels1"
+                :values = "lineValues1"
+                :area = "true"
               />
               
             </div>
@@ -77,10 +83,10 @@
           </ion-col>
           <ion-col size="12" size-lg="4">
             <div class="box">
-              Tasa de disponibilidad
-              <LineChart
-                :labels="lineLabels2"
-                :values="lineValues2"
+              <RadarChart
+                :labels = "radarLabels"
+                :dataValues = "radarValues"
+                :etiqueta = "radarLabel"
               />
             </div>
           </ion-col>
@@ -99,6 +105,7 @@ import RTSpeedGauge from '@/components/RTSpeedGauge.vue';
 import RTLineChart from '@/components/RTLineChart.vue';
 import BarChart from '@/components/BarChart.vue';
 import LineChart from '@/components/LineChart.vue';
+import RadarChart from '@/components/RadarChart.vue';
 
 const sparkData1 = ref({
   /* Propiedades del componente */
@@ -189,8 +196,9 @@ const barChartOptions = {
 const lineLabels1 = ['Ene','Feb','Mar','Abr','May','Jun'];
 const lineValues1 = [86, 43, 52, 67, 75 , 64];
 
-const lineLabels2 = ['Ene','Feb','Mar','Abr','May','Jun'];
-const lineValues2 = [63, 95, 97, 89, 84 , 99];
+const radarLabels = ['Ene','Feb','Mar','Abr','May','Jun'];
+const radarValues = [63, 95, 97, 89, 84 , 99];
+const radarLabel = 'Tasa de disponibilidad'
 </script>
 
 <style scoped>

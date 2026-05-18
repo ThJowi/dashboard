@@ -20,6 +20,10 @@ export default {
     values: {
       type: Array,
       required: true
+    },
+    area: { 
+      type: Boolean, 
+      default: false 
     }
   },
   setup(props) {
@@ -38,7 +42,8 @@ export default {
                 {
                     data: props.values,
                     type: 'line',
-                    smooth: true
+                    smooth: true,
+                    areaStyle: props.area
                 }
             ]
         };

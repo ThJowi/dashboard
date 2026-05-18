@@ -96,7 +96,7 @@ const smartGoalsBusiness = ref<SmartGoal[]>([
     description: "Aumentar el número de usuarios registrados de 14,000 a 20,000 antes de finalizar el próximo trimestre impulsando campañas de adquisición digital.",
     smart: [
       { letter: "S", content: "Aumentar los usuarios registrados" },
-      { letter: "M", content: "de 7,000 a 10,000" },
+      { letter: "M", content: "de 14,000 a 20,000" },
       { letter: "A", content: "mediante campañas de adquisición digital" },
       { letter: "R", content: "para expandir la base de clientes activos" },
       { letter: "T", content: "antes de finalizar el próximo trimestre" }
@@ -132,7 +132,7 @@ const smartGoalsBusiness = ref<SmartGoal[]>([
     description: "Incrementar los ingresos mensuales en un 20% durante los próximos 3 meses introduciendo promociones de combos y menú del día.",
     smart: [
       { letter: "S", content: "Incrementar ingresos mensuales" },
-      { letter: "M", content: "20% (46,000 → 55,200 €)" },
+      { letter: "M", content: "20% (42,000 → 50,400 €)" },
       { letter: "A", content: "introduciendo promociones de combos y menú del día" },
       { letter: "R", content: "para aumentar las ventas y mejorar el ticket promedio" },
       { letter: "T", content: "en 3 meses" }

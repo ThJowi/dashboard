@@ -48,10 +48,10 @@
         <ion-row class="ion-row-2">
           <ion-col size="12" size-lg="9">
             <div class="box">
-              Media de pedidos
-              <LineChart
-                :labels="lineLabels"
-                :values="lineValues"
+              Pedidos en tiempo real
+              <RTLineChart
+                :interval = "5000"
+                :offset = "10"
               />
             </div>
           </ion-col>
@@ -97,7 +97,7 @@ import SparkLine from '@/components/SparkLine.vue';
 import { ref } from 'vue';
 import BarChart from '@/components/BarChart.vue'
 import PieChart from '@/components/PieChart.vue';
-import LineChart from '@/components/LineChart.vue';
+import RTLineChart from '@/components/RTLineChart.vue';
 import MixedChart from '@/components/MixedChart.vue';
 
 const sparkData1 = ref({
@@ -141,7 +141,7 @@ const sparkData2 = ref({
     colors: ['#fff'],
     tooltip: { theme: 'dark', x: { show: false }, y: { title: { formatter: () => '' } } }
   },
-  chartSeries: [{ data: [18000, 40000, 68000, 104000, 144000, 190000] }],
+  chartSeries: [{ data: [24000, 43000, 81000, 112000, 148000, 190000] }],
 });
 
 const sparkData3 = ref({
@@ -211,8 +211,7 @@ const barChartOptions = {
 const pieSeries = [27.7, 35.5, 8.4, 28.4];
 const pieLabels = ['Pizza','Hamburguesas','Ensaladas','Sushi'];
 
-const lineLabels = ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom'];
-const lineValues = [100, 140, 180, 160, 220, 420, 340];
+
 
 const mixedLabels = ['Ene','Feb','Mar','Abr','May','Jun'];
 const mixedBarValues = [2300, 1800, 2740, 2360, 2780, 3500]

@@ -20,6 +20,10 @@ export default {
     interval: {
       type: Number,
       default: 1000
+    },
+    offset: {
+      type: Number,
+      default: 0
     }
   },
   setup(props) {
@@ -33,7 +37,7 @@ export default {
           labels: [],
           datasets: [
             {
-              label: 'Usuarios en tiempo real',
+              label: '',
               data: [],
               borderColor: 'rgba(75,192,192,1)',
               backgroundColor: 'rgba(75,192,192,0.2)',
@@ -49,13 +53,18 @@ export default {
           scales: {
             x: { display: false },
             y: { beginAtZero: true }
+          },
+          plugins: {
+            legend: { display: false }
           }
         }
       });
     };
     const startUpdates = () => {
       timer = setInterval(() => {
-        const newValue = Math.floor(Math.random() * 300 + 200); 
+        const base = Math.random() * 10;
+        const safeOffset = Number.isFinite(props.offset) ? props.offset : 0;
+        const newValue = Math.floor(base + safeOffset);
         const timeLabel = new Date().toLocaleTimeString();
         chart.data.labels.push(timeLabel);
         chart.data.datasets[0].data.push(newValue);

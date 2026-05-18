@@ -92,7 +92,7 @@ export default {
     };
     const startUpdates = () => {
       timer = setInterval(() => {
-        const newValue = Math.floor(Math.random() * 15 + 65); 
+        const newValue = Math.floor(Math.random() * 15 + 52); 
         chart.setOption({
           series: [
             {
